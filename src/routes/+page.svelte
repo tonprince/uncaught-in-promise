@@ -4,13 +4,13 @@
   
     let Boundary = createBoundary(FirestackError);
   
-    function getUsers() {
+    async function getUsers() {
       return ["aaa", "sss"];
     }
     </script>
   
   <Boundary>
     {#await getUsers() then users}
-      {user.error()}
+      {users.error()}
     {/await}
   </Boundary>
